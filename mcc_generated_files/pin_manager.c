@@ -49,21 +49,19 @@
 
 void PIN_MANAGER_Initialize(void)
 {
-    LATB = 0x4;
-    WPUE = 0x8;
     LATA = 0x0;
+    LATB = 0x4;
     LATC = 0x0;
-    WPUA = 0xCF;
-    WPUB = 0xE8;
-    WPUC = 0x60;
-    ANSELA = 0xD0;
-    ANSELB = 0xE9;
-    ANSELC = 0x60;
+    WPUE = 0x8;
+    WPUA = 0;
+    WPUB = 0;
+    WPUC = 0;
+    ANSELA = 0x10;
+    ANSELB = 0;
+    ANSELC = 0;
+    TRISA = 0xF0;
     TRISB = 0x11;
     TRISC = 0x9E;
-    TRISA = 0x30;
-
-    
 
     bool state = GIE;
     GIE = 0;

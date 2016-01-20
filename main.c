@@ -64,13 +64,13 @@ void Callback( uint8_t cmd, uint8_t par, int value)
         break;
       case SET_DIGITAL_PIN_VALUE:
         break;
-      case REPORT_ANALOG:
+      case REPORT_ANALOG:           // pin, enable/disable
           if (value) analogReps = analogReps | (1 << par);
           else       analogReps = analogReps & ~(1 << par);          
         break;
       case REPORT_DIGITAL:
-          portReps[par] = (uint8_t) value; // port, mask
-          LATA = value;
+          portReps[par] = (uint8_t) value; // port, 1/0 enable/disable
+          Firmata_sendDigitalPort(par, readPort(par)); // send first snapshot
         break;
   }
 }
@@ -80,13 +80,23 @@ void checkDigitalInputs(void)
     uint8_t port, value;
     for(port=0; port<sizeof(portReps); port++){
         if (portReps[port]) {
-            value = readPort(port) & portReps[port];    // check only pins requested
+            value = readPort(port) ;    // check entire ports enabled 
             if (prevPort[port] != value) {
                 Firmata_sendDigitalPort(port, value);
                 prevPort[port] = value;
             }
         }
     }
+}
+
+void reportAnalogInputs(void)
+{
+    static uint8_t pin=0;
+    if (analogReps >> pin) 
+        Firmata_sendAnalog(pin, analogRead(pin));
+    pin++;
+    if (pin > NUM_ANALOG_PINS) 
+        pin = 0;
 }
 
 /*
@@ -109,11 +119,8 @@ void main(void)
         }
         
         checkDigitalInputs();
+        reportAnalogInputs();
         
-//        if (getMode(pin) == PIN_MODE_ANALOG)
-//            Firmata_sendAnalog(pin, analogRead(pin));
-//        pin++;
-//        if (pin == TOTAL_NUM_PINS) pin = 0;
     }
 }
 /**

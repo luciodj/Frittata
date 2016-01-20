@@ -7,21 +7,6 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/adc.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm1.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm2.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm3.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm4.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm5.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/eusart.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pin_manager.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/interrupt_manager.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/spi1.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/i2c2.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm6.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pwm7.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/mcc.h</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
       <itemPath>xpress.h</itemPath>
       <itemPath>Boards.h</itemPath>
@@ -37,25 +22,25 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/adc.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/eusart.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/pin_manager.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/interrupt_manager.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/spi1.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/i2c2.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/mcc.c</itemPath>
-        <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/mcc_generated_files/tmr2.c</itemPath>
+        <itemPath>mcc_generated_files/adc.c</itemPath>
+        <itemPath>mcc_generated_files/eusart.c</itemPath>
+        <itemPath>mcc_generated_files/i2c2.c</itemPath>
+        <itemPath>mcc_generated_files/interrupt_manager.c</itemPath>
+        <itemPath>mcc_generated_files/mcc.c</itemPath>
+        <itemPath>mcc_generated_files/pin_manager.c</itemPath>
         <itemPath>mcc_generated_files/pwm1.c</itemPath>
         <itemPath>mcc_generated_files/pwm2.c</itemPath>
         <itemPath>mcc_generated_files/pwm3.c</itemPath>
         <itemPath>mcc_generated_files/pwm4.c</itemPath>
         <itemPath>mcc_generated_files/pwm5.c</itemPath>
-        <itemPath>mcc_generated_files/pwm7.c</itemPath>
         <itemPath>mcc_generated_files/pwm6.c</itemPath>
+        <itemPath>mcc_generated_files/pwm7.c</itemPath>
+        <itemPath>mcc_generated_files/spi1.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
       </logicalFolder>
-      <itemPath>/Users/m91329/Developer/MPLABXProjects/XPRESS/firmata/Xpress.X/main.c</itemPath>
       <itemPath>xpress.c</itemPath>
       <itemPath>Frittata.c</itemPath>
+      <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

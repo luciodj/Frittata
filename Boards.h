@@ -16,7 +16,7 @@
 #ifndef Firmata_Boards_h
 #define Firmata_Boards_h
 
-Xpress  // for digitalRead, digitalWrite, etc
+#include "Xpress.h"  // for digitalRead, digitalWrite, etc
 
 /*
     Firmata Hardware Abstraction Layer
