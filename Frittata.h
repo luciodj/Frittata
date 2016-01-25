@@ -1,18 +1,11 @@
 /*
-  Firmata.h - Firmata library v2.5.1 - 2015-12-26
-  Copyright (c) 2006-2008 Hans-Christoph Steiner.  All rights reserved.
-  Copyright (C) 2009-2015 Jeff Hoefs.  All rights reserved.
+  File: Frittata.h
+ * 
+ * A "Firmata" compatible 
+ */
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  See file LICENSE.txt for further informations on licensing terms.
-*/
-
-#ifndef Firmata_h
-#define Firmata_h
+#ifndef Frittata_h
+#define Frittata_h
 
 #include "boards.h"  /* Hardware Abstraction Layer */
 
@@ -24,7 +17,7 @@
 #define FIRMATA_PROTOCOL_MINOR_VERSION  5 // for backwards compatible changes
 #define FIRMATA_PROTOCOL_BUGFIX_VERSION 1 // for bugfix releases
 
-/* Version numbers for the Firmata library.
+/* Version numbers for the Frittata library.
  * The firmware version will not always equal the protocol version going forward.
  * Query using the REPORT_FIRMWARE message.
  */

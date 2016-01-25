@@ -1,6 +1,11 @@
 /*
- * File: xpress.c
+ * File: Xpress.c
+ * 
  * Author: Lucio Di Jasio
+ * 
+ * A PORT and Pin control API inspired by Wiring for the PIC16F188xx
+ * Default pin assignemnts are based on the MPLAB Xpress board.
+ * 
  */
 #include "Xpress.h"
 #include "Frittata.h"

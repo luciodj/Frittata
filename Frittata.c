@@ -1,4 +1,13 @@
 /*
+  
+ Project: Frittata.c
+ 
+ Author: Lucio Di Jasio
+ 
+ Description: 
+  A re-interpretation of the "Firmata" library ( http://firmata.org) 
+    in plain C language ported for the MPLAB Xpress board featuring the PIC16F188xx 
+ 
   Firmata.cpp - Firmata library v2.5.1 - 2015-12-26
   Copyright (c) 2006-2008 Hans-Christoph Steiner.  All rights reserved.
   Copyright (C) 2009-2015 Jeff Hoefs.  All rights reserved.
@@ -282,27 +291,6 @@ void Firmata_sendAnalog(uint8_t pin, int value)
   putch(ANALOG_MESSAGE | (pin & 0xF));
   sendValueAsTwo7bitBytes(value);
 }
-
-// send a single digital pin in a digital message
-void Firmata_sendDigital(uint8_t pin, int value)
-{
-  /* TODO add single pin digital messages to the protocol, this needs to
-   * track the last digital data sent so that it can be sure to change just
-   * one bit in the packet.  This is complicated by the fact that the
-   * numbering of the pins will probably differ on Arduino, Wiring, and
-   * other boards.
-   */
-
-  // TODO: the digital message should not be sent on the serial port every
-  // time sendDigital() is called.  Instead, it should add it to an int
-  // which will be sent on a schedule.  If a pin changes more than once
-  // before the digital message is sent on the serial port, it should send a
-  // digital message for each change.
-
-  //    if(value == 0)
-  //        sendDigitalPortPair();
-}
-
 
 // send 14-bits in a single digital message (protocol v1)
 // send an 8-bit port in a single digital message (protocol v2)
