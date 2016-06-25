@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Frittata.X
+PROJECTNAME=18-Frittata.X
 
 # Active Configuration
 DEFAULTCONF=default

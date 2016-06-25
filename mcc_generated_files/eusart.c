@@ -8,40 +8,39 @@
     eusart.c
 
   @Summary
-    This is the generated driver implementation file for the EUSART driver using MPLAB® Code Configurator
+    This is the generated driver implementation file for the EUSART driver using MPLAB(c) Code Configurator
 
   @Description
     This header file provides implementations for driver APIs for EUSART.
     Generation Information :
-        Product Revision  :  MPLAB® Code Configurator - v3.00 Beta
+        Product Revision  :  MPLAB(c) Code Configurator - 3.15.0
         Device            :  PIC16F18855
         Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 v1.35
-        MPLAB             :  MPLAB X v3.10
+        Compiler          :  XC8 1.35
+        MPLAB             :  MPLAB X 3.20
 */
 
 /*
-Copyright (c) 2013 - 2015 released Microchip Technology Inc.  All rights reserved.
+    (c) 2016 Microchip Technology Inc. and its subsidiaries. You may use this
+    software and any derivatives exclusively with Microchip products.
 
-Microchip licenses to you the right to use, modify, copy and distribute
-Software only when embedded on a Microchip microcontroller or digital signal
-controller that is integrated into your product or third party product
-(pursuant to the sublicense terms in the accompanying license agreement).
+    THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+    EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+    WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+    PARTICULAR PURPOSE, OR ITS INTERACTION WITH MICROCHIP PRODUCTS, COMBINATION
+    WITH ANY OTHER PRODUCTS, OR USE IN ANY APPLICATION.
 
-You should refer to the license agreement accompanying this Software for
-additional information regarding your rights and obligations.
+    IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+    INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+    WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+    BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+    FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+    ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+    THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
-SOFTWARE AND DOCUMENTATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
-EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF
-MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
-IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER
-CONTRACT, NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR
-OTHER LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
-INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
-CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
-SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
-(INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
+    TERMS.
  */
 
 /**
@@ -90,8 +89,8 @@ void EUSART_Initialize(void)
     // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN enabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
     TX1STA = 0x24;
 
-    // Baud Rate = 57600; SP1BRGL 138; 
-    SP1BRGL = 0x8A;
+    // Baud Rate = 57600; SP1BRGL 34; 
+    SP1BRGL = 0x22;
 
     // Baud Rate = 57600; SP1BRGH 0; 
     SP1BRGH = 0x00;
@@ -113,6 +112,9 @@ void EUSART_Initialize(void)
 uint8_t EUSART_Read(void)
 {
     uint8_t readValue  = 0;
+
+
+    RC1STAbits.SREN = 1;
 
     while(0 == eusartRxCount)
     {
@@ -185,12 +187,13 @@ void EUSART_Transmit_ISR(void)
 
 void EUSART_Receive_ISR(void)
 {
+
     if(1 == RC1STAbits.OERR)
     {
         // EUSART error - restart
 
-        RC1STAbits.CREN = 0;
-        RC1STAbits.CREN = 1;
+        RC1STAbits.SPEN = 0;
+        RC1STAbits.SPEN = 1;
     }
 
     // buffer overruns are ignored

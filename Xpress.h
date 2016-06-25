@@ -58,6 +58,9 @@ typedef enum {  A0=0, A1, A2, A3, A4, A5, A6, A7,
 #define LED1            A1
 #define LED2            A2
 #define LED3            A3
+        
+#define PWM6_DutyValueSet   PWM6_LoadDutyValue
+#define PWM7_DutyValueSet   PWM7_LoadDutyValue
 
 uint8_t digitalRead( pin_t pin);
 void digitalWrite(pin_t pin, uint8_t value);

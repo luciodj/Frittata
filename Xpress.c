@@ -45,7 +45,7 @@ uint8_t digitalRead( pin_t pin)
 
 uint16_t analogRead( pin_t pin)
 {
-    return (uint16_t) ADC_GetConversion( pin);
+    return (uint16_t) ADCC_GetSingleConversion( pin);
 }
 
 void writePort(uint8_t port, uint8_t mask)
